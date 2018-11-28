@@ -10,7 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/basemodule" />
-            <option value="$PROJECT_DIR$/firstmoudle" />
+            <option value="$PROJECT_DIR$/firstmodule" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
