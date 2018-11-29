@@ -3,8 +3,8 @@
     * maven repositories.
     **/
     ext{
-//        deps=[
-//                arouterruntime :"com.alibaba:arouter-api:1.2.4",
-//                aroutercompiler :"com.alibaba:arouter-compiler:1.1.4"
-//        ]
+        var=[
+                arouterruntime :"com.alibaba:arouter-api:1.2.4",
+                aroutercompiler :"com.alibaba:arouter-compiler:1.1.4"
+        ]
     }
