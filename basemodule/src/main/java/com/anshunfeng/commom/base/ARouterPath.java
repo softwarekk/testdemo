@@ -15,5 +15,6 @@ public class ARouterPath {
     public static final String LaunchAct = "/mainmodule/launch";
     /**登陆页*/
     public static final String LoginAct = "/mainmodule/login";
+    public static final String TestAct = "/firstmodule/test";
 
 }
