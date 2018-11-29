@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-
 android {
     compileSdkVersion 26
 
@@ -12,9 +11,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //ARouter
         javaCompileOptions {
             annotationProcessorOptions {
+                includeCompileClasspath true
                 arguments = [moduleName: project.getName()]
             }
         }
@@ -27,11 +26,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    android {
-        lintOptions {
-            abortOnError false
-        }
-    }
+
 }
 
 dependencies {
@@ -41,7 +36,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'//APT是一种处理注释的工具
+    compile 'com.alibaba:arouter-api:1.2.4'
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    api project (':basemodule')
+
 //    annotationProcessor rootProject.ext.deps.arouterruntime
 //    annotationProcessor rootProject.ext.deps.aroutercompiler
 }

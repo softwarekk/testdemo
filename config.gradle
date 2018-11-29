@@ -1,0 +1,10 @@
+    /**
+    * Shared file between builds so that they can all use the same dependencies and
+    * maven repositories.
+    **/
+    ext{
+//        deps=[
+//                arouterruntime :"com.alibaba:arouter-api:1.2.4",
+//                aroutercompiler :"com.alibaba:arouter-compiler:1.1.4"
+//        ]
+    }

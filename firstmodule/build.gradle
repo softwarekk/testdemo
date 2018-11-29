@@ -55,7 +55,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    api project(':basemodule')
-    annotationProcessor deps.arouter.compiler
+    api project(':librarymodule')
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'//APT是一种处理注释的工具
+//    annotationProcessor rootProject.ext.deps.arouterruntime
+//    annotationProcessor rootProject.ext.deps.aroutercompiler
+
 
 }

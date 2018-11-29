@@ -29,14 +29,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewManager.getInstance().addActivity(this);
+        AppManager.getInstance().addActivity(this);
     }
 
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ViewManager.getInstance().finishActivity(this);
+        AppManager.getInstance().finishActivity(this);
     }
 
     @Override
