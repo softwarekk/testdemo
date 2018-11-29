@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.anshunfeng.young.librarymodule" />
+    package="com.anshunfeng.young.librarymodule" >
+    <application>
+
+
+
+    </application>
+</manifest>

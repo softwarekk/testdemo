@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class BaseApplication extends Application {
 
-    public static final String ROOT_PACKAGE = "com.guiying.module";
+
 
     private static BaseApplication sInstance;
 
@@ -29,7 +29,9 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        TLog.log("application11","111");
         sInstance = this;
+        Utils.init(this);
 //        Logger.init("pattern").logLevel(LogLevel.FULL);
     }
 

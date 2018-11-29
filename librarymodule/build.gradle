@@ -41,5 +41,4 @@ dependencies {
     api project (':basemodule')
 
     annotationProcessor rootProject.ext.var.arouterruntime
-    annotationProcessor rootProject.ext.var.aroutercompiler
 }

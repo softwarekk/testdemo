@@ -1,3 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.anshunfeng.young.firstmoudle" >
+    <application>
+        <activity android:name="com.anshunfeng.firstmodule.TestActivity"></activity>
+
+
+    </application>
 </manifest>
