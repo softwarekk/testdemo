@@ -39,6 +39,11 @@ dependencies {
     compile 'com.alibaba:arouter-api:1.2.4'
 //    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
     api project (':basemodule')
-
+    annotationProcessor rootProject.ext.var.butterknifecompiler
+    annotationProcessor rootProject.ext.var.okhttp
+    annotationProcessor rootProject.ext.var.okhttpinterceptor
+    annotationProcessor rootProject.ext.var.retrofitruntime
+    annotationProcessor rootProject.ext.var.retrofitgson
+    annotationProcessor rootProject.ext.var.retrofitadapterrxjava2
     annotationProcessor rootProject.ext.var.arouterruntime
 }

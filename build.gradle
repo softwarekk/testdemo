@@ -27,6 +27,14 @@ task clean(type: Delete) {
 ext{
     var=[
             arouterruntime :"com.alibaba:arouter-api:1.2.4",
-            aroutercompiler :"com.alibaba:arouter-compiler:1.1.4"
+            aroutercompiler :"com.alibaba:arouter-compiler:1.1.4",
+            butterknifecompiler:"com.jakewharton:butterknife:8.8.1",
+            okhttp:"com.squareup.okhttp3:okhttp:3.9.0",
+            okhttpinterceptor:"com.squareup.okhttp3:logging-interceptor:3.9.0",
+            retrofitruntime : "com.squareup.retrofit2:retrofit:2.3.0",
+            retrofitgson:"com.squareup.retrofit2:converter-gson:2.3.0",
+            retrofitadapterrxjava2:"com.squareup.retrofit2:adapter-rxjava2:2.3.0",
+
+
     ]
 }

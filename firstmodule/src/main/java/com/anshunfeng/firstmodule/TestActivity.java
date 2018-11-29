@@ -5,6 +5,7 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
+//import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.anshunfeng.commom.base.ARouterPath;
 import com.anshunfeng.commom.base.BaseActivity;
