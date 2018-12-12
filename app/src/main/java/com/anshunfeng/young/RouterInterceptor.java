@@ -24,7 +24,7 @@ public class RouterInterceptor implements IInterceptor {
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
 
-        if(postcard.getPath().contains(ARouterPath.TestAct)){
+        if(postcard.getPath().contains("ooo")){
             Log.d("danxx", "拦截到向ActivityGirls跳转");
             //自定义处理
         }else {

@@ -34,7 +34,8 @@ ext{
             retrofitruntime : "com.squareup.retrofit2:retrofit:2.3.0",
             retrofitgson:"com.squareup.retrofit2:converter-gson:2.3.0",
             retrofitadapterrxjava2:"com.squareup.retrofit2:adapter-rxjava2:2.3.0",
-
-
+            retrofitgson:"com.squareup.retrofit2:converter-gson:2.3.0",
+            rxjava2:"io.reactivex.rxjava2:rxjava:2.1.5",
+            rx_android:"io.reactivex.rxjava2:rxandroid:2.0.1"
     ]
 }

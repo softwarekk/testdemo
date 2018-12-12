@@ -10,6 +10,12 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.anshunfeng.commom.base.ARouterPath;
 import com.anshunfeng.commom.base.BaseActivity;
 import com.anshunfeng.commom.base.TLog;
+import com.anshunfeng.firstmodule.bean.NewsData;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by ${Young} on 2018/11/29.
@@ -21,5 +27,28 @@ public class TestActivity  extends BaseActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TLog.log("testmodule","222");
+        FirstModuleRepository.getNewsDataRepository("20", "1")
+                  .subscribeOn(Schedulers.io())
+                  .observeOn(AndroidSchedulers.)
+                  .subscribe(new Observer<NewsData>() {
+                      @Override
+                      public void onSubscribe(Disposable d) {
+
+                      }
+
+                      @Override
+                      public void onNext(NewsData value) {
+                          TLog.log("firstmodule","111"+value.getResults().size()+value.toString());
+                      }
+
+                      @Override
+                      public void onError(Throwable e) {
+                      }
+
+                      @Override
+                      public void onComplete() {
+                      }
+                  });
     }
 }
