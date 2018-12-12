@@ -11,6 +11,9 @@ import com.anshunfeng.commom.base.ARouterPath;
 import com.anshunfeng.commom.base.BaseActivity;
 import com.anshunfeng.commom.base.TLog;
 import com.anshunfeng.firstmodule.bean.NewsData;
+import com.anshunfeng.firstmodule.entities.GirlsData;
+import com.anshunfeng.firstmodule.repository.NetDataRepository;
+import com.anshunfeng.firstmodule.service.NetDataService;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -28,18 +31,18 @@ public class TestActivity  extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         TLog.log("testmodule","222");
-        FirstModuleRepository.getNewsDataRepository("20", "1")
+        NetDataRepository.getFuliDataRepository("20", "1")
                   .subscribeOn(Schedulers.io())
-                  .observeOn(AndroidSchedulers.)
-                  .subscribe(new Observer<NewsData>() {
+                  .observeOn(AndroidSchedulers.mainThread())
+                  .subscribe(new Observer<GirlsData>() {
                       @Override
                       public void onSubscribe(Disposable d) {
 
                       }
 
                       @Override
-                      public void onNext(NewsData value) {
-                          TLog.log("firstmodule","111"+value.getResults().size()+value.toString());
+                      public void onNext(GirlsData girlsData) {
+
                       }
 
                       @Override
