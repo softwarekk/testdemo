@@ -27,6 +27,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    dataBinding{
+        enabled = true
+    }
     android {
         lintOptions {
             abortOnError false
@@ -37,25 +40,25 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    api 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     api var.butterknifecompiler
     api var.okhttp
     api var.okhttpinterceptor
-    compile "io.reactivex.rxjava2:rxjava:2.1.0" // 必要rxjava2依赖
-    compile "io.reactivex.rxjava2:rxandroid:2.0.1" // 必要rxandrroid依赖，切线程时需要用到
-    compile 'com.squareup.retrofit2:retrofit:2.3.0' // 必要retrofit依赖
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0' // 必要依赖，和Rxjava结合必须用到，下面会提到
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-
-    //    api var.retrofitruntime
-//    api var.retrofitgson
-//    api var.retrofitadapterrxjava2
+    api var.retrofitruntime
+    api var.retrofitgson
+    api var.retrofitadapterrxjava2
     api var.arouterruntime
-//    api var.rxjava2
-//    api var.rx_android
+    api var.rxjava2
+    api var.rx_android
+    api 'android.arch.lifecycle:runtime:1.1.0'
+    api 'android.arch.lifecycle:extensions:1.1.0'
+    api 'android.arch.lifecycle:common-java8:1.1.0'
+    annotationProcessor 'android.arch.lifecycle:compiler:1.1.0'
+    api 'com.android.support:recyclerview-v7:26.1.0'
+
 //    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'//APT是一种处理注释的工具
 //    annotationProcessor rootProject.ext.var.arouterruntime
 }

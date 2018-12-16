@@ -43,6 +43,9 @@ android {
             }
         }
     }
+    dataBinding {
+        enabled = true
+    }
     android {
         lintOptions {
             abortOnError false
@@ -61,10 +64,6 @@ dependencies {
     api project(':librarymodule')
 //    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'//APT是一种处理注释的工具
     annotationProcessor var.aroutercompiler
-    androidTestImplementation "io.reactivex.rxjava2:rxjava:2.1.0" // 必要rxjava2依赖
-    androidTestImplementation "io.reactivex.rxjava2:rxandroid:2.0.1" // 必要rxandrroid依赖，切线程时需要用到
-    androidTestImplementation 'com.squareup.retrofit2:retrofit:2.3.0' // 必要retrofit依赖
-    androidTestImplementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0' // 必要依赖，和Rxjava结合必须用到，下面会提到
-    androidTestImplementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
 
 }

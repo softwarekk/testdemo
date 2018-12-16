@@ -64,10 +64,10 @@ public class ToastUtils {
 	public static void showToast(final Context ctx, final int duration,
                                  final String text) {
 		final Toast toast = Toast.makeText(ctx, text, duration);
-		View view = RelativeLayout.inflate(ctx, R.layout.toast_layout, null);
-		TextView mNextView = (TextView) view.findViewById(R.id.toast_name);
-		toast.setView(view);
-		mNextView.setText(text);
+//		View view = RelativeLayout.inflate(ctx, R.layout.toast_layout, null);
+//		TextView mNextView = (TextView) view.findViewById(R.id.toast_name);
+//		toast.setView(view);
+//		mNextView.setText(text);
 		toast.setGravity(Gravity.CENTER, 0, 0);
 		toast.show();
 	}

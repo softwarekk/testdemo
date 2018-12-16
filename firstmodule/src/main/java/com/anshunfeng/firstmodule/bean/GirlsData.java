@@ -1,4 +1,4 @@
-package com.anshunfeng.young;
+package com.anshunfeng.firstmodule.bean;
 
 import java.util.List;
 

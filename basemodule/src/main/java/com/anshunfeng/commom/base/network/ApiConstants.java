@@ -7,5 +7,9 @@ package com.anshunfeng.commom.base.network;
 public class ApiConstants {
 
     public static final String GankHost = "http://gank.io/";
+    /**
+     *
+     */
+    public static final String Wanandroid = "http://www.wanandroid.com/";
 
 }

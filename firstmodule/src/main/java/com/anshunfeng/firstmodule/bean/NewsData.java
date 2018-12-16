@@ -8,116 +8,129 @@ import java.util.List;
 
 public class NewsData {
 
-    private boolean error;
-    private List<ResultsBean> results;
 
-    public boolean isError() {
-        return error;
+    /**
+     * data : [{"children":[],"courseId":13,"id":408,"name":"鸿洋","order":190000,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":409,"name":"郭霖","order":190001,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":410,"name":"玉刚说","order":190002,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":411,"name":"承香墨影","order":190003,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":413,"name":"Android群英传","order":190004,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":414,"name":"code小生","order":190005,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":415,"name":"谷歌开发者","order":190006,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":416,"name":"奇卓社","order":190007,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":417,"name":"美团技术团队","order":190008,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":420,"name":"GcsSloop","order":190009,"parentChapterId":407,"userControlSetTop":false,"visible":1},{"children":[],"courseId":13,"id":421,"name":"互联网侦察","order":190010,"parentChapterId":407,"userControlSetTop":false,"visible":1}]
+     * errorCode : 0
+     * errorMsg :
+     */
+
+    private int errorCode;
+    private String errorMsg;
+    private List<DataBean> data;
+
+    public int getErrorCode() {
+        return errorCode;
     }
 
-    public void setError(boolean error) {
-        this.error = error;
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
     }
 
-    public List<ResultsBean> getResults() {
-        return results;
+    public String getErrorMsg() {
+        return errorMsg;
     }
 
-    public void setResults(List<ResultsBean> results) {
-        this.results = results;
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
     }
 
-    public static class ResultsBean {
+    public List<DataBean> getData() {
+        return data;
+    }
 
-        private String _id;
-        private String createdAt;
-        private String desc;
-        private String publishedAt;
-        private String source;
-        private String type;
+    public void setData(List<DataBean> data) {
+        this.data = data;
+    }
+
+    public static class DataBean {
+        /**
+         * children : []
+         * courseId : 13
+         * id : 408
+         * name : 鸿洋
+         * order : 190000
+         * parentChapterId : 407
+         * userControlSetTop : false
+         * visible : 1
+         */
+
+        private int courseId;
+        private int id;
+        private String name;
+        private int order;
+        private int parentChapterId;
+        private boolean userControlSetTop;
+        private int visible;
+        private List<?> children;
         private String url;
-        private boolean used;
-        private String who;
-        private List<String> images;
 
-        public String get_id() {
-            return _id;
+        public int getCourseId() {
+            return courseId;
         }
 
-        public void set_id(String _id) {
-            this._id = _id;
+        public void setCourseId(int courseId) {
+            this.courseId = courseId;
         }
 
-        public String getCreatedAt() {
-            return createdAt;
+        public int getId() {
+            return id;
         }
 
-        public void setCreatedAt(String createdAt) {
-            this.createdAt = createdAt;
+        public void setId(int id) {
+            this.id = id;
         }
 
-        public String getDesc() {
-            return desc;
+        public String getName() {
+            return name;
         }
 
-        public void setDesc(String desc) {
-            this.desc = desc;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public String getPublishedAt() {
-            return publishedAt;
+        public int getOrder() {
+            return order;
         }
 
-        public void setPublishedAt(String publishedAt) {
-            this.publishedAt = publishedAt;
+        public void setOrder(int order) {
+            this.order = order;
         }
 
-        public String getSource() {
-            return source;
+        public int getParentChapterId() {
+            return parentChapterId;
         }
 
-        public void setSource(String source) {
-            this.source = source;
+        public void setParentChapterId(int parentChapterId) {
+            this.parentChapterId = parentChapterId;
         }
 
-        public String getType() {
-            return type;
+        public boolean isUserControlSetTop() {
+            return userControlSetTop;
         }
 
-        public void setType(String type) {
-            this.type = type;
+        public void setUserControlSetTop(boolean userControlSetTop) {
+            this.userControlSetTop = userControlSetTop;
         }
 
-        public String getUrl() {
-            return url;
+        public int getVisible() {
+            return visible;
         }
 
-        public void setUrl(String url) {
-            this.url = url;
+        public void setVisible(int visible) {
+            this.visible = visible;
         }
 
-        public boolean isUsed() {
-            return used;
+        public List<?> getChildren() {
+            return children;
         }
 
-        public void setUsed(boolean used) {
-            this.used = used;
+        public void setChildren(List<?> children) {
+            this.children = children;
         }
 
-        public String getWho() {
-            return who;
-        }
-
-        public void setWho(String who) {
-            this.who = who;
-        }
-
-        public List<String> getImages() {
-            return images;
-        }
-
-        public void setImages(List<String> images) {
-            this.images = images;
+        public String getUrl(){
+            return "https://res1.vmallres.com/shopdc/pic/c6015e15-b9e0-4d71-8a89-684dc96f162d.png";
         }
     }
 }

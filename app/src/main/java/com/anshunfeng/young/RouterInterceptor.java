@@ -24,11 +24,10 @@ public class RouterInterceptor implements IInterceptor {
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
 
-        if(postcard.getPath().contains("ooo")){
-            Log.d("danxx", "拦截到向ActivityGirls跳转");
+        if(postcard.getPath().contains("Log")){
             //自定义处理
         }else {
-            Log.d("danxx", "非拦截跳转执行path: "+postcard.getPath());
+
         }
 
         callback.onContinue(postcard);  // 处理完成，交还控制权

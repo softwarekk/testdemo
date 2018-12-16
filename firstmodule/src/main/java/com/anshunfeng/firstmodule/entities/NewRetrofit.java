@@ -12,7 +12,7 @@ import com.anshunfeng.firstmodule.service.NetDataService;
 public class NewRetrofit {
     public static NetDataService getAndroidData(){
 
-        NetDataService androidData = ApiClient.initService(ApiConstants.GankHost, NetDataService.class);
+        NetDataService androidData = ApiClient.initService(ApiConstants.Wanandroid, NetDataService.class);
 
         return androidData;
     }

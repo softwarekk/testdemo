@@ -50,17 +50,17 @@ public class ApiClient{
      * @return
      */
     public static <T> T initService(String baseUrl, Class<T> clazz) {
-        return getRetrofitInstance().create(clazz);
+        return getRetrofitInstance(baseUrl).create(clazz);
     }
 
     /**单例retrofit*/
     private static Retrofit retrofitInstance;
-    private static Retrofit getRetrofitInstance(){
+    private static Retrofit getRetrofitInstance(String baseUrl){
         if (retrofitInstance == null) {
             synchronized (ApiClient.class) {
                 if (retrofitInstance == null) {
                     retrofitInstance = new Retrofit.Builder()
-                            .baseUrl(ApiConstants.GankHost)
+                            .baseUrl(baseUrl)
                             .addConverterFactory(GsonConverterFactory.create())
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                             .client(getOkHttpClientInstance())
