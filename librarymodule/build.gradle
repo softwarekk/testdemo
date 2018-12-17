@@ -29,8 +29,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -38,7 +37,10 @@ dependencies {
     annotationProcessor var.aroutercompiler
     //fresco
     api 'com.facebook.fresco:fresco:1.5.0'
-    api "com.facebook.fresco:imagepipeline-okhttp3:1.5.0"
-    api project (':basemodule')
-
+    api 'com.facebook.fresco:imagepipeline-okhttp3:1.5.0'
+    api project(':basemodule')
+    api files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
+    api ('com.alibaba.android:vlayout:1.2.8@aar') {
+        transitive = true
+    }
 }

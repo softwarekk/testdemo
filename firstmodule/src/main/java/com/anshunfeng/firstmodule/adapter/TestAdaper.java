@@ -1,5 +1,6 @@
 package com.anshunfeng.firstmodule.adapter;
 
+import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import com.anshunfeng.firstmodule.bean.NewsData;
 import com.anshunfeng.young.firstmoudle.R;
 import com.anshunfeng.young.firstmoudle.databinding.TestItemLayoutBinding;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
@@ -34,9 +36,6 @@ public class TestAdaper extends RecyclerView.Adapter<TestAdaper.TesViewHolder> {
         holder.itemLayoutBinding.setTestItem(testList.get(position));
         holder.itemLayoutBinding.executePendingBindings();
     }
-
-
-
     @Override
     public int getItemCount() {
         return testList == null ? 0 : testList.size();
@@ -85,6 +84,12 @@ public class TestAdaper extends RecyclerView.Adapter<TestAdaper.TesViewHolder> {
             });
             testList = list;
             diffResult.dispatchUpdatesTo(this);
+        }
+    }
+    @BindingAdapter("image")
+    public static void loadImage(SimpleDraweeView image, String uri){
+        if(image!=null){
+            image.setImageURI(uri);
         }
     }
 }

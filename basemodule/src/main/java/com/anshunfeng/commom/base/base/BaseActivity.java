@@ -1,4 +1,4 @@
-package com.anshunfeng.commom.base;
+package com.anshunfeng.commom.base.base;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.anshunfeng.commom.base.AppManager;
+import com.anshunfeng.commom.base.Utils;
 import com.anshunfeng.young.basemodule.R;
 
 

@@ -63,7 +63,7 @@ public class NewsData {
         private boolean userControlSetTop;
         private int visible;
         private List<?> children;
-        private String url;
+        private String url="https://res1.vmallres.com/shopdc/pic/c6015e15-b9e0-4d71-8a89-684dc96f162d.png";
 
         public int getCourseId() {
             return courseId;

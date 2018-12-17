@@ -16,5 +16,5 @@ public class ARouterPath {
     /**登陆页*/
     public static final String LoginAct = "/mainmodule/login";
     public static final String TestAct = "/firstmodule/test";
-
+    public static final String WebViewAct="/firstmodule/webview";
 }

@@ -1,12 +1,9 @@
 package com.anshunfeng.young;
 
-import android.app.Application;
-
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.anshunfeng.commom.base.BaseActivity;
-import com.anshunfeng.commom.base.BaseApplication;
-import com.anshunfeng.commom.base.TLog;
+import com.anshunfeng.commom.base.base.BaseApplication;
 import com.anshunfeng.commom.base.Utils;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * Created by ${Young} on 2018/11/29.
@@ -17,6 +14,7 @@ public class AppContext extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         initARouter();
+        Fresco.initialize(this);
     }
     private void initARouter() {
         if(Utils.isAppDebug()){

@@ -1,7 +1,11 @@
-package com.anshunfeng.commom.base;
+package com.anshunfeng.commom.base.base;
 
 import android.app.Application;
 
+
+import com.anshunfeng.commom.base.ApplicationDelegate;
+import com.anshunfeng.commom.base.TLog;
+import com.anshunfeng.commom.base.Utils;
 
 import java.util.List;
 
@@ -38,25 +42,25 @@ public class BaseApplication extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        for (ApplicationDelegate delegate : mAppDelegateList) {
-            delegate.onTerminate();
-        }
+//        for (ApplicationDelegate delegate : mAppDelegateList) {
+//            delegate.onTerminate();
+//        }
     }
 
 
     @Override
     public void onLowMemory() {
         super.onLowMemory();
-        for (ApplicationDelegate delegate : mAppDelegateList) {
-            delegate.onLowMemory();
-        }
+//        for (ApplicationDelegate delegate : mAppDelegateList) {
+//            delegate.onLowMemory();
+//        }
     }
 
     @Override
     public void onTrimMemory(int level) {
         super.onTrimMemory(level);
-        for (ApplicationDelegate delegate : mAppDelegateList) {
-            delegate.onTrimMemory(level);
-        }
+//        for (ApplicationDelegate delegate : mAppDelegateList) {
+//            delegate.onTrimMemory(level);
+//        }
     }
 }

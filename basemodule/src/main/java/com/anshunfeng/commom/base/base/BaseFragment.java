@@ -1,8 +1,10 @@
-package com.anshunfeng.commom.base;
+package com.anshunfeng.commom.base.base;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+
+import com.anshunfeng.commom.base.Utils;
 
 
 public abstract class BaseFragment extends Fragment {

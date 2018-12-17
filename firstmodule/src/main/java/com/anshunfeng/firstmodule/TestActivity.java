@@ -1,31 +1,19 @@
 package com.anshunfeng.firstmodule;
 
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.databinding.BindingMethod;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.anshunfeng.commom.base.ARouterPath;
-import com.anshunfeng.commom.base.BaseActivity;
+import com.anshunfeng.commom.base.base.BaseActivity;
 import com.anshunfeng.commom.base.TLog;
-import com.anshunfeng.commom.base.network.SwitchSchedulers;
 import com.anshunfeng.firstmodule.adapter.TestAdaper;
-import com.anshunfeng.firstmodule.bean.GirlsData;
 import com.anshunfeng.firstmodule.bean.NewsData;
-import com.anshunfeng.firstmodule.repository.NetDataRepository;
 import com.anshunfeng.firstmodule.viewmodel.TestModel;
 import com.anshunfeng.young.firstmoudle.R;
 import com.anshunfeng.young.firstmoudle.databinding.TestLayoutBinding;
-
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by ${Young} on 2018/11/29.
