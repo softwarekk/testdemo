@@ -6,7 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 
-import com.beile.app.R;
+import com.anshunfeng.young.basemodule.R;
 
 /**
  * Created by yhx-chen on 2017/4/14.
@@ -24,7 +24,7 @@ public class ImageAnimation {
     public void startRotateAnim(Context context, View animView){
         if(animView != null) {
             if(rotateAnim == null) {
-                rotateAnim = AnimationUtils.loadAnimation(context, R.anim.rotate_offsety_animation);
+//                rotateAnim = AnimationUtils.loadAnimation(context, R.anim.rotate_offsety_animation);
                 rotateAnim.setDuration(1000);
                 LinearInterpolator lin = new LinearInterpolator();
                 rotateAnim.setInterpolator(lin);

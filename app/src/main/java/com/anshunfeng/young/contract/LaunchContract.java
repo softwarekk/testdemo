@@ -1,6 +1,8 @@
 package com.anshunfeng.young.contract;
 
-import com.anshunfeng.young.presenter.BasePresenter;
+import android.widget.TextView;
+
+import com.anshunfeng.commom.base.base.BasePresenter;
 import com.anshunfeng.young.presenter.LaunchPresenter;
 
 /**
@@ -9,7 +11,8 @@ import com.anshunfeng.young.presenter.LaunchPresenter;
 
 public interface LaunchContract {
     interface Model {
-        void logicConduct(LaunchPresenter presenter);
+        void logicConduct(LaunchPresenter presenter,TextView view);
+        void endTimer();
     }
 
     interface View {
@@ -17,7 +20,8 @@ public interface LaunchContract {
     }
 
     interface Presenter extends BasePresenter {
-        void startTimer();
+        void startTimer(TextView view);
         void endLogic();
+        void clickTimer();
     }
 }

@@ -1,5 +1,9 @@
 package com.anshunfeng.young.presenter;
 
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.anshunfeng.commom.base.base.*;
 import com.anshunfeng.young.contract.LaunchContract;
 import com.anshunfeng.young.model.LaunchModel;
 
@@ -25,14 +29,20 @@ public class LaunchPresenter implements LaunchContract.Presenter {
 
     }
 
+
     @Override
-    public void startTimer() {
-        model.logicConduct(this);
+    public void startTimer(TextView view) {
+        model.logicConduct(this,view);
     }
 
     @Override
     public void endLogic() {
         mView.endConduct();
+    }
+
+    @Override
+    public void clickTimer() {
+        model.endTimer();
     }
 
 
