@@ -16,8 +16,7 @@ public class LaunchModel implements LaunchContract.Model {
     private MyCountDownTimer countDownTimer;
 
     @Override
-    public void logicConduct(LaunchPresenter presenter, TextView timeTv) {
-        this.timeTv=timeTv;
+    public void logicConduct(LaunchPresenter presenter) {
         this.presenter=presenter;
         countDownTimer = new MyCountDownTimer(3000, 1000);
         countDownTimer.start();
@@ -43,11 +42,10 @@ public class LaunchModel implements LaunchContract.Model {
             super(millisInFuture, countDownInterval);
         }
         public void onFinish() {
-            timeTv.setText("跳过\n0s");
             presenter.endLogic();
         }
         public void onTick(long millisUntilFinished) {
-            timeTv.setText("跳过\n" + millisUntilFinished / 1000 + "s");
+            presenter.timerOnTicke(millisUntilFinished);
         }
     }
 

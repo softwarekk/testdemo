@@ -1,57 +1,56 @@
 package com.anshunfeng.young;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.anshunfeng.commom.base.ARouterPath;
-import com.anshunfeng.commom.base.TLog;
-import com.anshunfeng.commom.base.base.*;
+import com.anshunfeng.commom.base.base.BaseActivity;
 import com.anshunfeng.commom.base.widget.BitmapParticlealSplitView;
+import com.anshunfeng.commom.base.widget.BitmapTXTSplitView;
 import com.anshunfeng.young.contract.LaunchContract;
-import com.anshunfeng.young.presenter.LaunchPresenter;
+import com.anshunfeng.young.presenter.*;
 
 import butterknife.BindView;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 
 @Route(path = ARouterPath.LaunchAct)
-public class LaunchActivity extends com.anshunfeng.commom.base.base.BaseActivity implements LaunchContract.View{
-    private LaunchContract.Presenter presenter=new LaunchPresenter(this);
+public class LaunchActivity extends BaseActivity implements LaunchContract.View{
+    private LaunchContract.Presenter presenter=new LaunchPresenter();
     @BindView(R.id.btn_time)
     TextView btnTime;
-//    @BindView(R.id.welcom_img)
-//    BitmapParticlealSplitView welcomeImg;
+    @BindView(R.id.welcom_img)
+    BitmapTXTSplitView welcomeImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch_layout);
         ButterKnife.bind(this);
-                TLog.log("testbutton",btnTime+"_-");
-
+        presenter.attach(this,this);
+        initView();
     }
 
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(getContentView());
-//        ButterKnife.bind(this);
-//        TLog.log("testbutton",btnTime+"_-");
-//        presenter.startTimer(btnTime);
-//
-//    }
-//
-//    @Override
-//    public void initView() {
-//
-//    }
+    private void initView() {
+        presenter.startTimer();
+    }
 
     @Override
     public void endConduct() {
+        btnTime.setText("跳过\n0s");
         ARouter.getInstance().build(ARouterPath.TestAct).navigation();
+        finish();
+    }
+
+    @Override
+    public void onTick(long millisUntilFinished) {
+        btnTime.setText("跳过\n" + millisUntilFinished / 1000 + "s");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.dettch();
     }
 }

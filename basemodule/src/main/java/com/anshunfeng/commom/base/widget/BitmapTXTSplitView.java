@@ -78,10 +78,9 @@ public class BitmapTXTSplitView extends View {
 
         //加载图片数组
         mBitmaps = new Bitmap[]{
-                BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher),
+                BitmapFactory.decodeResource(getResources(), R.drawable.left_white_icon),
         };
-
-        bitmap2Ball(mBitmaps[curBitmapIndex]);
+        bitmap2Ball( mBitmaps[curBitmapIndex]);
 
 //        int color_0_0 = bitmap.getPixel(0, 0);
 //        mPaint.setColor(color_0_0);
@@ -145,7 +144,7 @@ public class BitmapTXTSplitView extends View {
             }
 
             if (mBalls.isEmpty()) {//表示本张已结束
-                if (curBitmapIndex == 2) {
+                if (curBitmapIndex == mBitmaps.length-1) {
                     mAnimator.end();
                     return;
                 }

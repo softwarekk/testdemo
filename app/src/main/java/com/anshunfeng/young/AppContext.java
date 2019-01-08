@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.anshunfeng.commom.base.base.BaseApplication;
 import com.anshunfeng.commom.base.Utils;
+import com.anshunfeng.young.librarymodule.CustomActivityOnCrash;
 import com.anshunfeng.young.librarymodule.autosize.AutoSizeConfig;
 import com.anshunfeng.young.librarymodule.autosize.external.ExternalAdaptInfo;
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -20,6 +21,7 @@ public class AppContext extends BaseApplication {
         initARouter();
         Fresco.initialize(this);
         initAutoSize();
+        CustomActivityOnCrash.install(this);
     }
 
     private void initAutoSize() {

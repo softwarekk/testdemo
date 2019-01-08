@@ -1,5 +1,6 @@
 package com.anshunfeng.young.presenter;
 
+import android.app.Activity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,27 +18,20 @@ import io.reactivex.disposables.CompositeDisposable;
  * Created by ${Young} on 2018/11/28.
  */
 
-public class LaunchPresenter implements LaunchContract.Presenter {
-    private LaunchContract.View mView;
-    private final LaunchModel model;
+public class LaunchPresenter  implements LaunchContract.Presenter {
+    private LaunchContract.View currentView;
+    private  LaunchModel model;
     private CompositeDisposable mSubscriptions;
-
-    public LaunchPresenter(LaunchContract.View androidView){
-        mView=androidView;
-        model = new LaunchModel();
-        mSubscriptions=new CompositeDisposable();
-
-    }
-
+    private Activity mInstance;
 
     @Override
-    public void startTimer(TextView view) {
-        model.logicConduct(this,view);
+    public void startTimer() {
+        model.logicConduct(this);
     }
 
     @Override
     public void endLogic() {
-        mView.endConduct();
+        currentView.endConduct();
     }
 
     @Override
@@ -45,16 +39,23 @@ public class LaunchPresenter implements LaunchContract.Presenter {
         model.endTimer();
     }
 
-
     @Override
-    public void subscribe() {
-
+    public void timerOnTicke(long millisUntilFinished) {
+        currentView.onTick(millisUntilFinished);
     }
 
     @Override
-    public void unSubscribe() {
-        if(mSubscriptions.isDisposed()){
-            mSubscriptions.clear();
-        }
+    public void attach(Activity mActivity, LaunchContract.View mView) {
+        currentView=mView;
+        model = new LaunchModel();
+        mInstance=mActivity;
     }
+
+    @Override
+    public void dettch() {
+        currentView=null;
+        model=null;
+        mInstance=null;
+    }
+
 }

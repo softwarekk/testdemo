@@ -2,7 +2,7 @@ package com.anshunfeng.young.contract;
 
 import android.widget.TextView;
 
-import com.anshunfeng.commom.base.base.BasePresenter;
+import com.anshunfeng.young.presenter.BasePresenter;
 import com.anshunfeng.young.presenter.LaunchPresenter;
 
 /**
@@ -11,17 +11,19 @@ import com.anshunfeng.young.presenter.LaunchPresenter;
 
 public interface LaunchContract {
     interface Model {
-        void logicConduct(LaunchPresenter presenter,TextView view);
+        void logicConduct(LaunchPresenter presenter);
         void endTimer();
     }
 
-    interface View {
+    interface View {//如有需要继承baseview 实现基本功能
         void endConduct();
+        void onTick(long millisUntilFinished);
     }
 
-    interface Presenter extends BasePresenter {
-        void startTimer(TextView view);
+    interface Presenter extends  BasePresenter<View>{
+        void startTimer();
         void endLogic();
         void clickTimer();
+        void timerOnTicke(long millisUntilFinished);
     }
 }

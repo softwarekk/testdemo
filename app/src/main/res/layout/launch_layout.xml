@@ -20,9 +20,9 @@
         android:textColor="@android:color/white"
         android:visibility="visible"
         android:layout_alignParentRight="true"/>
-    <!--<com.anshunfeng.commom.base.widget.BitmapParticlealSplitView-->
-        <!--android:id="@+id/welcom_img"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_centerInParent="true"/>-->
+    <com.anshunfeng.commom.base.widget.BitmapTXTSplitView
+        android:id="@+id/welcom_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
 </RelativeLayout>
